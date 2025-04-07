@@ -47,3 +47,24 @@ class Monitor {
         return `Monitor [ID: ${this._idMonitor}], Marca: ${this._marca}, Tamaño: ${this._tamaño}`;
     }
 }
+
+// Clase Computadora  
+class Computadora {  
+    static contadorComputadoras = 0;  
+
+    constructor(nombre, monitor, teclado, raton) {  
+        this._idComputadora = ++Computadora.contadorComputadoras;  
+        this._nombre = nombre;  
+        this._monitor = monitor; // falta pasar una instancia de Monitor  
+        this._teclado = teclado; // y aca pasar una instancia de Teclado  
+        this._raton = raton;     // y aca pasar una instancia de Raton  
+    }  
+
+    get idComputadora() {  
+        return this._idComputadora;  
+    }  
+
+    toString() {  
+        return `Computadora [ID: ${this._idComputadora}], Nombre: ${this._nombre}, Monitor: ${this._monitor.toString()}, Teclado: ${this._teclado.toString()}, Raton: ${this._raton.toString()}`;  
+    }  
+}  
